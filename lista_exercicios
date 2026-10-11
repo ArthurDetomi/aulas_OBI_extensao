@@ -1,0 +1,22 @@
+Excelente ideia. Usar o Beecrowd (antigo URI) é uma estratégia muito mais pragmática para treinar para a OBI. A plataforma automatiza a validação, força o raciocínio sobre os casos de teste e ensina os alunos a lidarem com a formatação exata de entrada (EOF, leituras múltiplas) e saída, que é onde muitos travam no início.
+
+Selecionei 10 problemas sequenciais e clássicos da plataforma. Eles progridem da sintaxe básica até o raciocínio lógico em cima dos índices.
+
+### Listas (Vetores)
+
+* **1172 - Substituição em Vetor I:** O aluno precisa ler um vetor de 10 posições e substituir valores nulos ou negativos por 1. É o exercício mais direto para garantir que eles sabem instanciar uma lista, fazer um loop de leitura e aplicar uma condicional simples dentro dela.
+* **1173 - Preenchimento de Vetor I:** Aqui a lógica inverte levemente. O aluno recebe apenas um número e precisa gerar os próximos 9 iterativamente, onde cada posição é o dobro da anterior. Ótimo para fixar a ideia de que o estado atual depende do estado passado (`vetor[i-1]`).
+* **1174 - Seleção em Vetor I:** O foco é a filtragem. Eles precisam ler 100 números reais e imprimir apenas os valores menores ou iguais a 10, junto com suas posições. Força o uso correto da função `enumerate()` do Python ou o controle manual do índice no laço.
+* **1177 - Preenchimento de Vetor II:** Excelente para exercitar a lógica circular. O aluno lê um valor $T$ e deve preencher um vetor de 1000 posições repetindo a sequência de 0 até $T-1$. A solução elegante exige que o aluno entenda e aplique o operador de módulo matemático (`%`), uma ferramenta essencial para a OBI.
+* **1179 - Preenchimento de Vetor IV:** Um problema robusto de gerenciamento de estado. O aluno lê 15 números e deve separá-los em dois vetores (pares e ímpares) de tamanho máximo 5. Quando um vetor enche, deve ser impresso e esvaziado. Exige um raciocínio claro de controle de fluxo e arquitetura do algoritmo.
+
+### Matrizes (Listas de Listas)
+
+* **1181 - Linha na Matriz:** O aluno escolhe uma linha específica de uma matriz $12 \times 12$ e realiza uma operação (soma ou média). É a introdução perfeita para entender que uma matriz no Python é uma lista contendo outras listas, permitindo acessar a linha inteira diretamente pelo primeiro índice.
+* **1182 - Coluna na Matriz:** Semelhante ao 1181, mas operando em uma coluna. Como a memória guarda os dados por linhas, somar uma coluna exige que o aluno itere sobre todas as linhas, travando o segundo índice. Fundamental para a compreensão de travessia bidimensional.
+* **1183 - Acima da Diagonal Principal:** Este é um divisor de águas lógico. O aluno precisa operar apenas nos elementos que estão acima da diagonal principal. A chave não é usar vários `if`, mas sim entender a relação matemática dos índices onde a coluna é sempre maior que a linha ($j > i$).
+* **1187 - Área Superior:** Eleva a complexidade do problema anterior. Agora o aluno deve operar apenas nos elementos da área superior de um "X" formado pelas duas diagonais da matriz. Exige que o aluno desenhe a matriz no papel, anote os limites e traduza o padrão visual para o controle dos limites do laço `for`.
+* **1189 - Área Esquerda:** A mesma premissa do 1187, mas focando na área esquerda. Os limites de iteração aumentam e diminuem dependendo da metade da matriz. É um excelente teste de fogo para manipulação avançada de índices em matrizes, habilidade obrigatória para problemas de grafos e mapas na OBI.
+
+**Um conselho direto sobre boas práticas para passar a eles:**
+Seja rigoroso na cobrança para que eles resolvam os problemas de matriz (1183 a 1189) controlando os índices no laço `for`, e não lendo a matriz inteira para depois colocar um `if` testando cada posição. Processar coisas desnecessárias gasta tempo de execução, e otimização de tempo é critério de desempate e aprovação na OBI.

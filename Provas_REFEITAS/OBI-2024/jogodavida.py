@@ -33,13 +33,16 @@ def obterQuantidadeVizinhosVivo(matriz, N, linha, coluna):
     return somaVizinhos
     
 
-N, Q = list(map(lambda v : int(v), input().split()))
+entrada = input().split()
+
+N = int(entrada[0])
+Q = int(entrada[1])
 
 matriz = []
 
 for i in range(N):
     linhasStr = input()
-
+    
     linhasArr = []
         
     for j in range(N):
